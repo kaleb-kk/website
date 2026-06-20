@@ -1,0 +1,1 @@
+{"name": "personal-blog", "version": "1.0.0", "description": "个人博客网站", "type": "module", "scripts": {"dev": "vitepress dev docs", "build": "vitepress build docs", "preview": "vitepress preview docs"}, "devDependencies": {"vitepress": "^1.6.4"}, "keywords": ["blog", "vitepress", "personal-website"], "author": "", "license": "MIT"}
