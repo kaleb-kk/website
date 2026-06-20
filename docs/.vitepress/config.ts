@@ -14,8 +14,8 @@ const posts = fs.readdirSync(postsDir)
     link: `/posts/${file.replace(/\.md$/, '')}`
   }))
 
-// Cloudflare Pages 用根路径，GitHub Pages 用 /website/
-const base = process.env.CF_PAGES === '1' ? '/' : '/website/'
+// GitHub Pages 部署路径
+const base = '/website/'
 
 export default defineConfig({
   base,
