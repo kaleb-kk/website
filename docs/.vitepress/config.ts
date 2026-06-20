@@ -14,8 +14,9 @@ const posts = fs.readdirSync(postsDir)
     link: `/posts/${file.replace(/\.md$/, '')}`
   }))
 
-// GitHub Pages 部署路径
-const base = '/website/'
+// GitHub Pages 用 /website/，Vercel / Cloudflare Pages 用根路径
+const isGitHub = !process.env.CF_PAGES && !process.env.VERCEL
+const base = isGitHub ? '/website/' : '/'
 
 export default defineConfig({
   base,
