@@ -15,6 +15,7 @@ const posts = fs.readdirSync(postsDir)
   }))
 
 export default defineConfig({
+  base: '/website/',
   title: "我的个人博客",
   description: "记录技术、生活与思考",
   lang: 'zh-CN',
