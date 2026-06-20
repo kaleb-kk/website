@@ -14,15 +14,18 @@ const posts = fs.readdirSync(postsDir)
     link: `/posts/${file.replace(/\.md$/, '')}`
   }))
 
+// Cloudflare Pages 用根路径，GitHub Pages 用 /website/
+const base = process.env.CF_PAGES === '1' ? '/' : '/website/'
+
 export default defineConfig({
-  base: '/website/',
+  base,
   title: "我的个人博客",
   description: "记录技术、生活与思考",
   lang: 'zh-CN',
   ignoreDeadLinks: true,
 
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: `${base}logo.svg` }],
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
   ],
 
